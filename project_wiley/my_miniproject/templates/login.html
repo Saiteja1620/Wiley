@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/static//css/style.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<title>Login Page</title>
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form action="/verifyLogin" method="post" class="sign-in-fomr">
+          <h2 class="title">Log in</h2>
+
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="email" placeholder="Enter Email" name="email" required><br>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Enter Password" name="password" required><br>
+          </div>
+          <input type="submit" value="Login" class="btn solid">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content">
+        <h3>Please Login to perform action</h3>
+        <p>You can view the dashboard only when you are logged into 
+          the website only , No Account ?
+        </p>
+        
+        <button class="btn transparent" id="sign-up-btn" onclick="/templates/register.html"><a href="/register">Register</a></button>
+        <button class="btn transparent" id="sign-up-btn" onclick="/templates/home.html"><a href="/">Home</a></button>
+      </div>
+      <img src="/static/img/account.svg" class="image" alt="">
+    </div>
+  </div>
+</body>
+</html>

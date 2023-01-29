@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <h1>Upcoming Events</h1>
+    <a href="/yourEvents">Click Here to See Your Events</a>
+    {% for i in result: %}
+    <br>
+    <table border="1" style="margin:auto;">
+        <tr>
+            <td>Event Name:</td>
+            <td>{{i[2]}}</td>
+        </tr>
+        <tr>
+            <td>Event Description</td>
+            <td>{{i[3]}}</td>
+        </tr>
+        <tr>
+            <td>Event Venue</td>
+            <td>{{i[4]}}</td>
+        </tr>
+        <tr>
+            <td>Event Time</td>
+            <td>{{i[5]}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <form action="/register/{{i[0]}}" method="post">
+                    <input type="submit" name="register" id="" value="Register">
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <hr width="18%">
+    {% endfor %}
+    <br>
+    
+
+    <hr width="36%" height="2px">
+    <h1>Recent Events</h1>
+    {% for i in result2: %}
+    <table border="1" style="margin:auto;">
+        <tr>
+            <td>Event Name:</td>
+            <td>{{i[2]}}</td>
+        </tr>
+        <tr>
+            <td>Event Description</td>
+            <td>{{i[3]}}</td>
+        </tr>
+        <tr>
+            <td>Event Venue</td>
+            <td>{{i[4]}}</td>
+        </tr>
+        <tr>
+            <td>Event Time</td>
+            <td>{{i[5]}}</td>
+        </tr>
+    </table>
+    <br>
+    <hr width="18%">
+    {% endfor %}
+</body>
+</html>

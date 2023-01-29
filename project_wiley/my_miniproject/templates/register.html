@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration Page</title>
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/static//css/style.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+</head>
+<body >
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+              <form action="/registerUser" method="post" class="sign-in-form">
+                    <h1 class="title">Register</h1>
+                    <p>Please fill in this form to create an account.</p>
+                    <hr>
+                    <div class="input-field-select" style="width: 100%;">
+                      <label for="profile"><b>Choose One:</b></label>
+                      <select name="profile" id="profile">
+                        <option value="organiser">Organiser</option>
+                        <option value="sponsor">Sponsor</option>
+                        <option value="participant">Participant</option>
+                      </select>
+                    </div>
+                    
+                    <div class="input-field">
+                      <i class="fas fa-user"></i>
+                      <input type="text" placeholder="Enter Full Name" name="fullName"  required>
+                    </div>
+
+                    <div class="input-field">
+                      <i class="fas fa-envelope"></i>
+                      <input type="email" placeholder="Enter Email" name="email" required>
+                    </div>
+
+                    <div class="input-field">
+                      <i class="fas fa-mobile"></i>
+                      <input type="text" placeholder="Enter Phone Number" name="mobile" required>
+                    </div>
+
+                    <div class="input-field">
+                      <i class="fas fa-lock"></i>
+                      <input type="password" placeholder="Enter Password" name="password" required>
+                    </div>
+
+                    <div class="input-field">
+                      <i class="fas fa-repeat"></i>
+                      <input type="password" placeholder="Repeat Password" name="confirmPassword" required>
+                    </div>
+
+                    <button type="submit" class="btn solid">Register</button>
+            
+            
+          </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content">
+        <h3> Please fill your details to enroll yourself</h3>
+        <p>already registered ?</p>
+        <button class="btn transparent" id="sign-up-btn" onclick="/templates/login.html"><a href="/login">Login</a></button>
+      </div>
+      <img src="/static/img/log.svg" class="image" alt="">
+    </div>
+  </div>
+</body>
+</html>

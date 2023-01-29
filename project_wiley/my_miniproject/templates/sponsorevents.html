@@ -1,0 +1,171 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome {{name[0][0]}}...Your Events</h1>
+    <a href="/sponsor">Click Here To View All Events</a>  -->
+    <!--<form action="/sponsor">
+        <input type="submit" name="" id="" value="Clike Here To View All Events"> -->
+    <!-- </form>
+    <h1>Approval Not Needed Events</h1>
+    {% for i in result: %}
+    <table border="1" style="margin:auto;">
+        <tr>
+            <td>Event Name:</td>
+            <td>{{i[2]}}</td>
+        </tr>
+        <tr>
+            <td>Event Description</td>
+            <td>{{i[3]}}</td>
+        </tr>
+        <tr>
+            <td>Event Venue</td>
+            <td>{{i[4]}}</td>
+        </tr>
+        <tr>
+            <td>Event Time</td>
+            <td>{{i[5]}}</td>
+        </tr>
+    </table>
+    <br>
+    <hr width="18%">
+    {% endfor %}
+    <br>
+    <hr>
+    <h1>Approved Events</h1>
+    {% for i in approved: %}
+    <table border="1" style="margin:auto;">
+        <tr>
+            <td>Event Name:</td>
+            <td>{{i[2]}}</td>
+        </tr>
+        <tr>
+            <td>Event Description</td>
+            <td>{{i[3]}}</td>
+        </tr>
+        <tr>
+            <td>Event Venue</td>
+            <td>{{i[4]}}</td>
+        </tr>
+        <tr>
+            <td>Event Time</td>
+            <td>{{i[5]}}</td>
+        </tr>
+    </table>
+    <br>
+    <hr width="18%">
+    {% endfor %}
+    <br>
+    <hr>
+    <br>
+    <h1>Approval Pending</h1>
+    {% for i in result1: %}
+    <table border="1" style="margin:auto;">
+        <tr>
+            <td>Event Name:</td>
+            <td>{{i[2]}}</td>
+        </tr>
+        <tr>
+            <td>Event Description</td>
+            <td>{{i[3]}}</td>
+        </tr>
+        <tr>
+            <td>Event Venue</td>
+            <td>{{i[4]}}</td>
+        </tr>
+        <tr>
+            <td>Event Time</td>
+            <td>{{i[5]}}</td>
+        </tr>
+    </table>
+    <br>
+    <hr width="18%">
+    {% endfor %}
+</body>
+</html> -->
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="content_side">
+    <nav>
+        <ul>
+            <a href=""><li><h4>ALL EVENTS</h4></li></a>
+            <a href=""><li>My events</li></a>
+        </ul>
+    </nav>
+    <div class="cards">
+        {% for i in result: %}
+        
+        <div class="card">
+            <div class="img-holder">
+                <img src="/static/img/plant.jpg" alt="">
+            </div>
+            <div class="text">
+                <h3>Approval not needed</h3>
+                <h2>{{i[2]}}</h2>
+                <h2>{{i[3]}}</h2>
+                <h2>{{i[4]}}</h2>
+                <h2>{{i[5]}}</h2>
+                <h2>{{i[6]}}</h2>
+                <h2>{{i[7]}}</h2>
+            </div>
+            
+        </div>
+    
+        {% endfor %}
+    </div> 
+
+    <div class="cards">
+        {% for i in approved: %}
+        
+        <div class="card">
+            <div class="img-holder">
+                <img src="/static/img/plant.jpg" alt="">
+            </div>
+            <div class="text">
+                <h3>approved events</h3>
+                <h2>{{i[2]}}</h2>
+                <h2>{{i[3]}}</h2>
+                <h2>{{i[4]}}</h2>
+                <h2>{{i[5]}}</h2>
+                <h2>{{i[6]}}</h2>
+                <h2>{{i[7]}}</h2>
+            </div>
+            
+        </div>
+    
+        {% endfor %}
+    </div> 
+    
+    <div class="cards">
+        {% for i in result1: %}
+        
+        <div class="card">
+            <div class="img-holder">
+                <img src="/static/img/plant.jpg" alt="">
+            </div>
+            <div class="text">
+                <h3>pending approval</h3>
+                <h2>{{i[2]}}</h2>
+                <h2>{{i[3]}}</h2>
+                <h2>{{i[4]}}</h2>
+                <h2>{{i[5]}}</h2>
+                <h2>{{i[6]}}</h2>
+                <h2>{{i[7]}}</h2>
+            </div>
+            
+        </div>
+    
+        {% endfor %}
+    </div> 
+    
+
+{% endblock %}

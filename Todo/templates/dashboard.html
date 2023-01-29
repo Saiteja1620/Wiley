@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align:center ;">Welcome {{name}}</h1>
+    <table style="margin:auto;">
+        <th>You have {{count}} todos</th>
+        {% for i in range(todo|length): %}
+        <tr>
+            <td>{{todo[i]}}</td>
+            <td>
+                <form action="/remove/{{i}}" method="post">
+                    <input type="submit" name="" value="Remove">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <form action="/add" method="post">
+                <td><input type="text" name="item" id="" placeholder="Enter Item"></td>
+                <td><input type="submit" name="" id="" value="Add"></td>
+            </form>
+        </tr>
+    </table>
+</body>
+</html>

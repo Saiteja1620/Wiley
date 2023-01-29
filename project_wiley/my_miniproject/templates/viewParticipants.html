@@ -1,0 +1,75 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Welcome</h1>
+    <hr>
+    <br>
+    {% for i in result: %}
+    <table border="1" style="margin: auto;">
+        <tr>
+            <td>Event Name</td>
+            <td>{{i[0]}}</td>
+    </tr>
+        <tr>
+            <td>Participant Name</td>
+            <td>{{i[2]}}</td>
+        </tr>
+        <tr>
+            <td>Participant Email-id:</td>
+            <td>{{i[3]}}</td>
+        </tr>
+        <tr>
+            <td>Participant Mobile No:</td>
+            <td>{{i[4]}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center;">
+                <form action="/approveParticipant/{{i[1]}}/{{i[5]}}">
+                    <input type="submit" name="" id="" value="Approve">
+                </form>
+            </td>
+        </tr>
+    </table>
+    <hr width="20%">
+    {% endfor %}
+</body>
+</html> -->
+
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="cards">s
+    {% for i in result: %}
+    
+    <div class="card">
+        <div class="img-holder">
+            <img src="/static/img/plant.jpg" alt="">
+        </div>
+        <div class="text">
+            <h2>{{i[0]}}</h2>
+            <h2>{{i[2]}}</h2>
+            <h2>{{i[3]}}</h2>
+            <h2>{{i[4]}}</h2>
+
+            <h2>{{i[1]}}</h2>
+            <h2>{{i[5]}}</h2>
+        </div>
+
+        <form method="/approveParticipant/{{i[1]}}/{{i[5]}}" method="post">
+            <input type="submit" name="approve" id="" value="approve">
+        </form>
+        <!-- <a href="/approveParticipant/{{i[1]}}/{{i[5]}}">approve</a> -->
+    </div>
+       
+    </div>
+
+    {% endfor %}
+</div> 
+{% endblock %}

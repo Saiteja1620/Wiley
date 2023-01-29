@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content_side">
+            <nav>
+                <ul>
+                    <a href="/events"><li>All events</li></a>
+                    <a href="/yourEvents"><li>your events</li></a>
+                </ul>
+            </nav>
+<div class="cards">
+    {% for i in result: %}
+    
+    <div class="card">
+        <div class="img-holder">
+            <img src="/static/img/plant.jpg" alt="">
+        </div>
+        <div class="text">
+            <h2>{{i[2]}}</h2>
+            <h2>{{i[3]}}</h2>
+            <h2>{{i[4]}}</h2>
+            <h2>{{i[5]}}</h2>
+        </div>
+        <form action="/register1/{{i[0]}}" method="post">
+
+            <input type="submit" name="register" id="" value="Register">
+
+        </form>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}}
