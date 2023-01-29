@@ -1,0 +1,14 @@
+<html lang="en">
+<head>
+</head>
+<body>
+    <table border="1">
+        {% for i in response: %}
+        <tr>
+            <td>{{i}}:</td>
+            <td>{{response[i]}}</td>
+        {% endfor %}
+        </tr>
+    </table>
+</body>
+</html>

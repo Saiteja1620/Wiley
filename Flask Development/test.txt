@@ -1,0 +1,4 @@
+content of the file is content is written using flask
+because mini project is to be done
+in flask.
+Done...!!!

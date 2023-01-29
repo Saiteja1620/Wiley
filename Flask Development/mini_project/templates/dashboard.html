@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+
+        #dashboard td , #dashboard th{
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #dashboard tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+
+        #dashboard tr:hover{
+            background-color: #ddd;
+        }
+
+        #dashboard th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+        body
+        {
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+    </style>
+</head>
+<body style="background-color:rgb(162, 230, 247)">
+    <h1 style="text-align:center ;color:rgb(5, 5, 5)">Welcome {{name}}</h1>
+    <h1 style="text-align: center;color:rgb(224, 44, 38)">You have {{count}} todos to complete</h1>
+    <table style="margin:auto;" id="dashboard">
+        <tr>
+            <th>Task</th>
+            <th>Remove</th>
+            <th>Change Status</th>
+        </tr>
+        {% for i in todo: %}
+        <tr>
+            <td>{{i[0]}}</td>
+            <td>
+                <form action="/remove/{{name}}/{{i[0]}}" method="post">
+                    <input type="submit" name="" value="Remove">
+                </form>
+            </td>
+            <td>
+                <form action="/completed/{{name}}/{{i[0]}}" method="post">
+                    <input type="submit" name="" value="Completed">
+                </form>
+            </td>
+        </tr>
+        
+        
+        {% endfor %}
+        <tr>
+            <form action="/add" method="post">
+                <td><input type="text" name="item" id="" placeholder="Enter Item"></td>
+                <td><input type="submit" name="" id="" value="Add"></td>
+            </form>
+        </tr>
+    </table>
+    <hr>
+    <table style="margin:auto;" id="dashboard">
+        <h1 style="text-align: center;color:rgb(224, 44, 38)">You have Completed following Todos</h1>
+        <tr>
+            <th>Task</th>
+            <th>Status</th>
+        </tr>
+        {% for i in incomplete: %}
+        <tr>
+            <td>
+                {{i[0]}}
+            </td>
+            <td>
+                <input type="button" value="Completed">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

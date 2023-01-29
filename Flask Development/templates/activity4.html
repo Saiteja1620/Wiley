@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h2 style="color:green">Sai Teja</h2>
+    <table border="1">
+        <th>userId</th>
+        <th>firstName</th>
+        <th>lastName</th>
+        <th>phoneNumber</th>
+        <th>emailAddress</th>
+        {% for i in answer: %}
+        <tr>
+            <td>{{i['userId']}}</td>
+            <td>{{i['firstName']}}</td>
+            <td>{{i['lastName']}}</td>
+            <td>{{i['phoneNumber']}}</td>
+            <td>{{i['emailAddress']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
