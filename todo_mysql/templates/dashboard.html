@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align:center ;">Welcome {{name}}</h1>
+    <h1 style="text-align: center;">You have {{count}} todos</h1>
+    <table style="margin:auto;">
+        {% for i in todo: %}
+        <tr>
+            <td>{{i[0]}}</td>
+            <td>
+                <form action="/remove/{{name}}/{{i[0]}}" method="post">
+                    <input type="submit" name="" value="Remove">
+                </form>
+            </td>
+            <td>
+                <form action="/setStatus/{{name}}/{{i[0]}}" method="post">
+                    <input type="submit" name="status" id="" value="SetStatus">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <form action="/add" method="post">
+                <td><input type="text" name="item" id="" placeholder="Enter Item"></td>
+                <td><input type="submit" name="" id="" value="Add"></td>
+            </form>
+        </tr>
+    </table>
+    <hr>
+    <table style="margin:auto;">
+        <h1 style="text-align: center;">You have {{icount}} Completed Todos</h1>
+        {% for i in incomplete: %}
+        <tr>
+            <td>
+                {{i[0]}}
+            </td>
+            <td>
+                <input type="button" value="Completed">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
